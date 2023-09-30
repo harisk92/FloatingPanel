@@ -95,7 +95,9 @@ public class FloatingPanelSurfaceView: UIView {
     public let containerView: UIView = UIView()
 
     @available(*, unavailable, renamed: "containerView")
-    public var backgroundView: UIView!
+    public var backgroundView: UIView {
+        get { containerView }
+    }
 
     private lazy var containerViewTopConstraint = containerView.topAnchor.constraint(equalTo: topAnchor, constant: containerMargins.top)
     private lazy var containerViewHeightConstraint = containerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1.0)
